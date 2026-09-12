@@ -20,7 +20,7 @@ const Paste = () => {
 
   return (
     <div className='min-h-[calc(100vh-4rem)] bg-slate-50 text-slate-900'>
-      <div className='max-w-3xl mx-auto px-4 py-8 flex flex-col gap-6'>
+      <div className='max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-4 sm:gap-6'>
         <input
           className='w-full bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 px-4 py-3 rounded-xl text-sm transition-all shadow-sm'
           type='search'
@@ -34,22 +34,22 @@ const Paste = () => {
             filteredData.map((paste) => {
               return (
                 <div 
-                  className='bg-white border border-slate-200 p-5 rounded-2xl flex flex-col gap-3 transition-all hover:border-slate-300 shadow-sm' 
+                  className='bg-white border border-slate-200 p-4 sm:p-5 rounded-2xl flex flex-col gap-3 transition-all hover:border-slate-300 shadow-sm' 
                   key={paste?._id}
                 >
-                  <div className='flex justify-between items-start'>
-                    <h3 className='font-semibold text-slate-900 text-base'>{paste.title}</h3>
-                    <span className='text-xs text-slate-400 font-mono'>
+                  <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 sm:gap-0'>
+                    <h3 className='font-semibold text-slate-900 text-base wrap-break-word'>{paste.title}</h3>
+                    <span className='text-xs text-slate-400 font-mono whitespace-nowrap'>
                       {new Date(paste.createdAt).toLocaleDateString()}
                     </span>
                   </div>
                   
-                  <p className='text-slate-600 text-sm line-clamp-2 font-mono bg-slate-50 p-3 rounded-lg border border-slate-100'>
+                  <p className='text-slate-600 text-sm line-clamp-2 font-mono bg-slate-50 p-3 rounded-lg border border-slate-100 break-all'>
                     {paste.content}
                   </p>
 
-                  <div className='flex items-center justify-between pt-2'>
-                    <div className='flex gap-4 text-xs font-medium'>
+                  <div className='flex flex-wrap items-center justify-between gap-2 pt-2'>
+                    <div className='flex flex-wrap gap-3 sm:gap-4 text-xs font-medium'>
                       <Link 
                         to={`/?pasteId=${paste?._id}`} 
                         className='text-slate-600 hover:text-blue-600 transition-colors'
@@ -75,7 +75,7 @@ const Paste = () => {
 
                     <button 
                       onClick={() => handleDelete(paste?._id)}
-                      className='text-red-500 hover:text-red-600 text-xs font-medium transition-colors'
+                      className='text-red-500 hover:text-red-600 text-xs font-medium transition-colors ml-auto sm:ml-0'
                     >
                       Delete
                     </button>

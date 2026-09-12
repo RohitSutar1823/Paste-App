@@ -4,33 +4,30 @@ import { useParams } from 'react-router-dom';
 
 const ViewPaste = () => {
   const { id } = useParams();
-
   const allPastes = useSelector((state) => state.paste.pastes);
-
-  // Use .find() instead of .filter() so 'paste' is a single object
   const paste = allPastes.find((p) => p._id === id);
 
-  console.log("Final Paste: ", paste);
-
   return (
-    <div className='flex flex-col gap-4 items-center mt-5'>
-      <div className='flex flex-row gap-2 justify-between w-full max-w-150'>
-        <input
-          className='p-2 rounded-2xl w-[70%] bg-zinc-800 text-white'
-          type='text'
-          placeholder='enter title here'
-          value={paste?.title || ""}
-          disabled
-        />
-      </div>
-      <div>
-        <textarea
-          className='p-3 rounded-2xl min-w-150 min-h-100 bg-zinc-800 text-white'
-          placeholder='enter content here'
-          value={paste?.content || ""}
-          disabled
-          rows={20}
-        />
+    <div className='min-h-[calc(100vh-4rem)] bg-slate-50 text-slate-900'>
+      <div className='max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-4 sm:gap-6'>
+        <div className='w-full'>
+          <input
+            className='w-full bg-white border border-slate-200 text-slate-900 placeholder-slate-400 px-4 py-3 rounded-xl text-sm shadow-sm'
+            type='text'
+            placeholder='enter title here'
+            value={paste?.title || ""}
+            disabled
+          />
+        </div>
+        <div>
+          <textarea
+            className='w-full bg-white border border-slate-200 text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm resize-y min-h-[350px] sm:min-h-[400px] font-mono shadow-sm'
+            placeholder='enter content here'
+            value={paste?.content || ""}
+            disabled
+            rows={15}
+          />
+        </div>
       </div>
     </div>
   );

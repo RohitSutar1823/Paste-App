@@ -54,10 +54,10 @@ const Home = () => {
 
   return (
     <div className='min-h-[calc(100vh-4rem)] bg-slate-50 text-slate-900'>
-      <div className='max-w-3xl mx-auto px-4 py-8 flex flex-col gap-6'>
-        <div className='flex gap-3 w-full'>
+      <div className='max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-4 sm:gap-6'>
+        <div className='flex flex-col sm:flex-row gap-3 w-full'>
           <input
-            className='flex-1 bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 px-4 py-3 rounded-xl text-sm transition-all shadow-sm'
+            className='w-full sm:flex-1 bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 px-4 py-3 rounded-xl text-sm transition-all shadow-sm'
             type='text'
             placeholder='Paste title...'
             value={title}
@@ -65,14 +65,14 @@ const Home = () => {
           />
           <button 
             onClick={createPaste}
-            className='bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-3 rounded-xl text-sm transition-colors whitespace-nowrap shadow-sm'
+            className='w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-3 rounded-xl text-sm transition-colors whitespace-nowrap shadow-sm text-center'
           >
             {pasteId ? "Update Paste" : "Create Paste"}
           </button>
         </div>
         <div>
           <textarea
-            className='w-full bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm transition-all resize-y min-h-[400px] font-mono shadow-sm'
+            className='w-full bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm transition-all resize-y min-h-[350px] sm:min-h-[400px] font-mono shadow-sm'
             placeholder='Write your content here...'
             value={value}
             onChange={(e) => setValue(e.target.value)}
