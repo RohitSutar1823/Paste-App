@@ -1,19 +1,29 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 const Navbar = () => {
   return (
-    <div className='flex flex-row gap-4 place-content-evenly'>
-      <NavLink
-      to="/">
-        Home
-      </NavLink>
+    <nav className='w-full h-16 flex items-center justify-center border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50'>
+      <div className='flex gap-8 font-medium text-sm'>
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => 
+            isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "text-slate-500 hover:text-slate-800 transition-colors pb-1"
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink 
+          to="/pastes" 
+          className={({ isActive }) => 
+            isActive ? "text-blue-600 border-b-2 border-blue-600 pb-1" : "text-slate-500 hover:text-slate-800 transition-colors pb-1"
+          }
+        >
+          Pastes
+        </NavLink>
+      </div>
+    </nav>
+  );
+};
 
-      <NavLink
-      to="/pastes">
-        Pastes
-      </NavLink>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
