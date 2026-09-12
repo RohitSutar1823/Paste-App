@@ -72,7 +72,7 @@ const Home = () => {
         </div>
         <div>
           <textarea
-            className='w-full bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm transition-all resize-y min-h-[350px] sm:min-h-[400px] font-mono shadow-sm'
+            className='w-full bg-white border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm transition-all resize-y min-h-87.5 sm:min-h-100 font-mono shadow-sm'
             placeholder='Write your content here...'
             value={value}
             onChange={(e) => setValue(e.target.value)}

@@ -21,7 +21,7 @@ const ViewPaste = () => {
         </div>
         <div>
           <textarea
-            className='w-full bg-white border border-slate-200 text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm resize-y min-h-[350px] sm:min-h-[400px] font-mono shadow-sm'
+            className='w-full bg-white border border-slate-200 text-slate-900 placeholder-slate-400 p-4 rounded-xl text-sm resize-y min-h-87.5 sm:min-h-100 font-mono shadow-sm'
             placeholder='enter content here'
             value={paste?.content || ""}
             disabled
